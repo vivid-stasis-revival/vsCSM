@@ -1,0 +1,84 @@
+[
+    {
+        "Entry": "gml_Object_initiategame_Other_10",
+        "ExternalFile": "songinfo.gml",
+        "Type": 3
+    },
+    {
+        "Entry": "gml_GlobalScript_create_song_packs",
+        "Function": "create_song_packs",
+        "ExternalFile": "create_songpacks.gml",
+        "Type": 3
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSong",
+        "Find": "var chart = read_binary_chart(working_directory + \"Charts/\" + arg0 + \"/\" + arg1 + \".vsb\");",
+        "ExternalFile": "LoadSong_Mod.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_add_value_to_ratingscore_table",
+        "Find": "global.song_list[i].chart_id != \"plaudite\"",
+        "Value": "(global.song_list[i].chart_id != \"plaudite\" && !struct_exists(global.song_list[i],\"is_custom\"))",
+        "Type": 0
+    },
+    {
+        "Entry": "gml_GlobalScript_upload_score",
+        "Find": "var song = global.song_list[arg0];",
+        "Value": "var song = global.song_list[arg0];if(struct_exists(song,\"is_custom\")) return;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_save_highscores",
+        "Find": "ini_open(global.highscore_file);",
+        "ExternalFile": "save_highscores.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_load_highscores",
+        "Find": "var load_score =",
+        "ExternalFile": "load_highscores_part1.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_load_highscores",
+        "Find": "scores[d] = load_score(string(i), diff_names[d]);",
+        "ExternalFile": "load_highscores_part2.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_load_highscores",
+        "Find": "global.highscores.shatter[i] = load_score(string(i), song.difficulty_name);",
+        "ExternalFile": "load_highscores_part3.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_create_shatter_list",
+        "Find": "global.shatter_list[17].name = \"Angelstar?\";",
+        "Value": "",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_create_shatter_list",
+        "Find": "if (get_story_progress() == 36)",
+        "Value": "if (get_story_progress() == 36)\n{global.shatter_list[17].name = \"Angelstar?\";var hjmlsb=1;}\nCustomShatterReader();",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_profile_select_2023boot_Step_0",
+        "Find": "global.last_freeplay_song = ini_read_real(\"profile\", \"last_freeplay_song\", 0);",
+        "ExternalFile": "songid_overflow_crash_fix.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_profile_select_2023boot_Step_0",
+        "Find": "global.last_freeplay_song = ini_read_real(\"profile\", \"last_freeplay_song\", 0);",
+        "ExternalFile": "songid_overflow_crash_fix.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_Object_initiategame_Other_10",
+        "ExternalFile": "favorite_not_exist_crash_fix.gml",
+        "Type": 3
+    }
+]
