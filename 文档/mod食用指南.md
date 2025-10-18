@@ -15,14 +15,14 @@
 ```jsonc
 {
     "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
-    "name": "SuddeNDeath",
-    "formatted_name": "Sudde\u88a0Death",
-    "artist": "xi vs. Morimori Atsushi",
-    "bpm_display": "236",
+    "name": "SuddeNDeath",//曲名
+    "formatted_name": "Sudde\u88a0Death",//原始曲名
+    "artist": "xi vs. Morimori Atsushi",//曲师名
+    "bpm_display": "236",//bpm的显示值
     "version": "9.9.9",
     "is_original": false,
     "is_published": true,
-    "jacket_artist": "idk",
+    "jacket_artist": "idk",//曲绘作者
     "has_encore": true,//有encore难度这个必须为true；
     "difficulty_constant_1": 0,//OPENING难度值
     "difficulty_display_1": "0",//OPENING显示的难度
@@ -44,6 +44,21 @@
         "hidden": false,
         "hint": "",
         "enc_hint": ""
+    },
+    //BACKSTAGE的信息，可以不写（BACKSTAGE本质上是修改ENCORE难度的音源，曲绘等信息
+    //所以有这项必须带ENCORE难度）
+    //谱师名和难度相关要填上面的diffculty4部分
+
+    //以下的项均可不填，不填的项与上面相同
+    "enc_data":{
+        "audio_id":"miao.ogg",//曲目文件
+        "preview_id":"miao_preview.ogg",//预览音频文件
+        "jacket":"miao.png",//曲绘文件
+        "bpm_display":"222",//bpm显示
+        "name":"SuddeNDeath meow",
+        "formatted_name":"Sudde\u88a0Death meow",
+        "artist":"idk",
+        "jacket_designer":"cusi"
     }
 }
 ```
@@ -77,7 +92,7 @@ info.json:
 
 ```jsonc
 {
-    "chart_id": "cusi", 
+    "chart_id": "cusi",
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",
     "artist": "xi vs. Morimori Atsushi",
@@ -106,6 +121,16 @@ info.json:
         "hidden": false,
         "hint": "",
         "enc_hint": ""
+    },
+    "enc_data":{
+        "audio_id":"miao.ogg",
+        "preview_id":"miao_preview.ogg",
+        "jacket":"miao.png",
+        "bpm_display":"222",
+        "name":"SuddeNDeath meow",
+        "formatted_name":"Sudde\u88a0Death meow",
+        "artist":"idk",
+        "jacket_designer":"cusi"
     }
 }
 ```
