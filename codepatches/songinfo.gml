@@ -1,4 +1,3 @@
-
 var log = file_text_open_write(working_directory + "CustomSongMod_log.txt");
 
 if (directory_exists("Custom Songs/"))
@@ -9,7 +8,7 @@ if (directory_exists("Custom Songs/"))
     while (customPath != "")
     {
         customPath = "Custom Songs/" + customPath + "/";
-        file_text_write_string(log, "   nowPath:" + customPath + "\n");
+        file_text_write_string(log, "nowPath:" + customPath + "\n");
         file_text_write_string(log, "   songID:" + string(array_length(global.song_list)) + "\n");
         
         if (file_exists(customPath + "info.json"))
@@ -21,16 +20,11 @@ if (directory_exists("Custom Songs/"))
             while (!file_text_eof(customSongInfo))
                 songInfoJson = songInfoJson + file_text_readln(customSongInfo);
             
-            file_text_write_string(log, "   GotJsonFile:\n" + songInfoJson + "\n");
             var songInfo = json_parse(songInfoJson);
             songInfo.is_custom = true;
             songInfo.song_id = array_length(global.song_list);
             songInfo.unlock.song_id = array_length(global.song_list);
-            
-            if (file_exists(customPath + "music.ogg"))
-                songInfo.audio_id = audio_create_stream(customPath + "music.ogg");
-            else
-                file_text_write_string(log, "   [Fatal Error] No music.ogg found in " + customPath + "\n");
+            songInfo.audio_id = audio_create_stream(customPath + "music.ogg");
             
             if (file_exists(customPath + "preview.ogg"))
             {
@@ -38,8 +32,8 @@ if (directory_exists("Custom Songs/"))
             }
             else
             {
-                file_text_write_string(log, "   [Error] No preview.ogg found in " + customPath + " ,using whole music as preview\n");
-                songInfo.preview_id = audio_create_stream(customPath + "music.ogg");
+                file_text_write_string(log, "   [Error] No preview.ogg found in " + customPath + " , using whole music as preview\n");
+                songInfo.preview_id = songInfo.audio_id;
             }
             
             if (file_exists(customPath + "jacket.gif"))
@@ -60,8 +54,46 @@ if (directory_exists("Custom Songs/"))
             }
             else
             {
-                file_text_write_string(log, "   [Error] No jacket found in " + customPath + " ,using default jacket\n");
+                file_text_write_string(log, "   [Error] No jacket found in " + customPath + " , using default jacket\n");
                 songInfo.jacket = song_generic;
+            }
+            
+            if (struct_exists(songInfo, "enc_data"))
+            {
+                songInfo.enc_data.song_id = array_length(global.song_list);
+                
+                if (struct_exists(songInfo.enc_data, "audio_id"))
+                {
+                    musicName = songInfo.enc_data.audio_id;
+                    songInfo.enc_data.audio_id = audio_create_stream(customPath + musicName);
+                }
+                else
+                {
+                    file_text_write_string(log, "   No extra music for backspace, using original music\n");
+                    songInfo.enc_data.audio_id = songInfo.audio_id;
+                }
+                
+                if (struct_exists(songInfo.enc_data, "preview_id"))
+                {
+                    musicName = songInfo.enc_data.preview_id;
+                    songInfo.enc_data.preview_id = audio_create_stream(customPath + musicName);
+                }
+                else
+                {
+                    file_text_write_string(log, "   No extra preview for backspace, using whole music as preview\n");
+                    songInfo.enc_data.preview_id = songInfo.enc_data.audio_id;
+                }
+                
+                if (struct_exists(songInfo.enc_data, "jacket"))
+                {
+                    jacketName = songInfo.enc_data.jacket;
+                    songInfo.enc_data.jacket = sprite_add(customPath + jacketName, 1, false, false, 0, 0);
+                }
+                else
+                {
+                    file_text_write_string(log, "   No extra jacket for backspace, using original jacket\n");
+                    songInfo.enc_data.jacket = songInfo.jacket;
+                }
             }
             
             array_push(global.song_list, songInfo);
