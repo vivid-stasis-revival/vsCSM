@@ -12,7 +12,7 @@
 
 一个完整的info.json文件如下 **（注意，"//"开头的文字是我为了介绍方便加的注释，实际info.json和shatterinfo.json内不能有注释！）**
 
-```jsonc
+```json5
 {
     "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
     "name": "SuddeNDeath",//曲名
@@ -65,7 +65,7 @@
 
 一个完整的shatterinfo.json文件如下
 
-```jsonc
+```json5
 {"chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",
@@ -90,7 +90,7 @@
 
 info.json:
 
-```jsonc
+```json5
 {
     "chart_id": "cusi",
     "name": "SuddeNDeath",
@@ -137,7 +137,7 @@ info.json:
 
 shatterinfo.json:
 
-```jsonc
+```json5
 {"chart_id": "cusi",
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",

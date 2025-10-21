@@ -1,0 +1,19 @@
+{
+    "chart_id": "Example",
+    "name": "GUN MU",
+    "formatted_name": "GUN MU",
+    "artist": "GUN MU",
+    "bpm_display": "-1",
+    "version": "9.9.9",
+    "is_original": false,
+    "is_published": true,
+    "jacket_artist": "idk",
+    "difficulty_name": "GUN MU PU MIAN",
+    "difficulty_number": "-114514",
+    "note_designer": "NI ZHE GE ZENME SHI KONG BAI A",
+    "ticket_earns": [
+        9999,
+        9999,
+        9999
+    ]
+}
