@@ -57,7 +57,14 @@ if (directory_exists("Custom Songs/"))
                 file_text_write_string(log, "   [Error] No jacket found in " + customPath + " , using default jacket\n");
                 songInfo.jacket = song_generic;
             }
-            
+
+            if !struct_exists(songInfo,"sort_artists")
+            {
+                songInfo.sort_artists=[songInfo.artist];
+                file_text_write_string(log, "   [Error] No sort_artists found,using artist info\n");
+            }
+
+            //enc_data(BACKSTAGE)部分
             if (struct_exists(songInfo, "enc_data"))
             {
                 songInfo.enc_data.song_id = array_length(global.song_list);

@@ -1,4 +1,4 @@
-在游戏根目录下找到Custom Songs文件夹，之后将你的自制谱文件夹拖进去就行了。
+在你steam的游戏目录下找到Custom Songs文件夹（没有就创建一个），之后将你的自制谱文件夹拖进去就行了。
 <br>
 
 一个自制谱文件夹有以下文件：
@@ -18,6 +18,7 @@
     "name": "SuddeNDeath",//曲名
     "formatted_name": "Sudde\u88a0Death",//原始曲名
     "artist": "xi vs. Morimori Atsushi",//曲师名
+    "sort_artists":["morimori atsushi","xi"],//按曲师分类时使用的曲师名，可以填多个曲师，没写这项会把artist放进去
     "bpm_display": "236",//bpm的显示值
     "version": "9.9.9",
     "is_original": false,
@@ -27,7 +28,7 @@
     "difficulty_constant_1": 0,//OPENING难度值
     "difficulty_display_1": "0",//OPENING显示的难度
     "note_designer_1": "N/A",//OPENING的谱师名
-    //往下2为MIDDLE，3为FINALE，4为ENCORE；没有ENCORE难度可不写4的部分
+    //往下2为MIDDLE，3为FINALE，4为ENCORE；
     "difficulty_constant_2": 0,
     "difficulty_display_2": "0",
     "note_designer_2": "N/A",
@@ -96,6 +97,7 @@ info.json:
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",
     "artist": "xi vs. Morimori Atsushi",
+    "sort_artists":["morimori atsushi","xi"],
     "bpm_display": "236",
     "version": "9.9.9",
     "is_original": false,
