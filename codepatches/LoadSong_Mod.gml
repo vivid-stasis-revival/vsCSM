@@ -8,13 +8,9 @@ if (file_exists(filePath))
 }
 else
 {
-    chart = load_text_chart(working_directory + "Custom Songs/" + arg0 + "/" + arg1 + ".vsc");
+    chart = load_text_chart(arg0,arg1);
 }
 
-if file_exists(modFilePath)
-{
-    chart.mods=load_text_mods(modFilePath);
-}
 
 // if chart.mods != undefined{
 //    modOutputer(chart.mods,global.songname,arg1,arg0);

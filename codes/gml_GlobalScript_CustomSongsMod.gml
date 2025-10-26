@@ -1,14 +1,13 @@
 function load_text_mods(arg0)
-{   
-    var ds_mods= ds_list_create()
-    var ds_mpf=ds_list_create()
-
+{
+    var ds_mods = ds_list_create();
+    var ds_mpf = ds_list_create();
     var modsDefinition = 
     {
         data: 
         {
-            proxies:0,
-            obj:"obj_base_gimmick"
+            proxies: 0,
+            obj: "obj_base_gimmick"
         },
         mods: ds_mods,
         perFrame: ds_mpf,
@@ -17,7 +16,10 @@ function load_text_mods(arg0)
     };
     var fileName = arg0;
     
-    var file = file_text_open_read(fileName);
+    if (!file_exists(fileName))
+        return undefined;
+    
+    file = file_text_open_read(fileName);
     var mode = "mods";
     
     while (!file_text_eof(file))
@@ -83,21 +85,20 @@ function load_text_mods(arg0)
                     p: real(proxy)
                 };
                 m.w = variable_struct_get(global.mod_weight, m.m);
-                m.e=variable_struct_get(global.eases, ease)
-                ds_list_add(modsDefinition.mods,m);
-
+                m.e = variable_struct_get(global.eases, ease);
+                ds_list_add(modsDefinition.mods, m);
             }
         }
         else if (mode == "mpf")
         {
-            var obj_ins=getModGimmickObj(modsDefinition.data.obj);
+            var obj_ins = getModGimmickObj(modsDefinition.data.obj);
             var parts = string_split(line, ",");
             var m = 
             {
                 b: real(parts[0]),
-                e: real(parts[1]),
+                e: real(parts[1])
             };
-            m.f=variable_struct_get(obj_ins.obj.funcs, parts[2]);
+            m.f = variable_struct_get(obj_ins.obj.funcs, parts[2]);
             ds_list_add(modsDefinition.perFrame, m);
         }
     }

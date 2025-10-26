@@ -80,5 +80,53 @@
         "Entry": "gml_Object_initiategame_Other_10",
         "ExternalFile": "favorite_not_exist_crash_fix.gml",
         "Type": 3
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "var weight = ini_read_real(\"mods\", \"weight\", 0);",
+        "Value": "",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "ini_close();",
+        "Value": "",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "ini_open(working_directory + \"Charts/\" + arg0 + \"/\" + arg1 + \".vmv\");",
+        "ExternalFile": "load_custom_stats_p1.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "if (!file_exists(binName))",
+        "Value": "if(!file_exists(binName) && !file_exists(customChartName))",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "var statName = baseName + \".stats\";",
+        "ExternalFile": "load_custom_stats_p2.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "var hash = sha1_file(binName);",
+        "ExternalFile": "load_custom_stats_p3.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "ini_open(statName);",
+        "Value": "ini_open(finalstatName)",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_LoadSongData",
+        "Find": "data = parseSongDataFromBinary(binName, arg0, arg3, arg1 == \"ENCORE\");",
+        "ExternalFile": "load_custom_stats_p4.gml",
+        "Type": 1
     }
 ]
