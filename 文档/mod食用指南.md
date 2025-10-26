@@ -8,6 +8,7 @@
 - preview.ogg（非必须）
 - .vsc谱面文件
 - .vsm特效文件（非必须）
+- .vmv特效信息文件（非必须，没有这个文件将无法显示gimmick stats）
 - info.json，shatterinfo.json（二者至少有一个）
 
 一个完整的info.json文件如下 **（注意，"//"开头的文字是我为了介绍方便加的注释，实际info.json和shatterinfo.json内不能有注释！）**
@@ -19,7 +20,7 @@
     "formatted_name": "Sudde\u88a0Death",//原始曲名
     "artist": "xi vs. Morimori Atsushi",//曲师名
     "sort_artists":["morimori atsushi","xi"],//按曲师分类时使用的曲师名，可以填多个曲师，没写这项会把artist放进去
-    "bpm_display": "236",//bpm的显示值
+    "bpm_display": "236",//bpm的显示值，最好不要乱填，stats计算以这个值作为平均bpm
     "version": "9.9.9",
     "is_original": false,
     "is_published": true,
