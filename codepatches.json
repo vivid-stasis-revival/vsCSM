@@ -128,5 +128,11 @@
         "Find": "data = parseSongDataFromBinary(binName, arg0, arg3, arg1 == \"ENCORE\");",
         "ExternalFile": "load_custom_stats_p4.gml",
         "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_songselect_Draw_0",
+        "Find": "draw_text(316 - artist_width, 2 + top_y, name);",
+        "Value": "draw_text(316 - artist_width, 2 + top_y, name); if (struct_exists(selected_song, \"is_custom\")) {draw_sprite(sp_custom, 0, 2, 7 + top_y);}",
+        "Type": 1
     }
 ]
