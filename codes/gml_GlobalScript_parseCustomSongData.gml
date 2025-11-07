@@ -1,7 +1,8 @@
 function parseSongDataFromText(arg0, arg1, arg2 = false, arg3 = false, arg4)
 {
     //WriteInLogFree(arg0 + "," + arg4);
-    var chart = load_text_chart(arg0, arg4);
+    var chartPath = global.song_list[get_song_id_from_chart(arg0)].chart_path;
+    var chart = load_text_chart(chartPath, arg4);
     var songEntry = getSongEntry(arg1);
     var songLength = audio_sound_length(songEntry.audio_id);
     

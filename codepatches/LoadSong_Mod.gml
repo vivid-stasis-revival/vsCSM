@@ -1,5 +1,6 @@
 var filePath = working_directory + "Charts/" + arg0 + "/" + arg1 + ".vsb";
-var modFilePath=working_directory + "Custom Songs/" + arg0 + "/" + arg1 + ".vsm";
+var chartPath = global.song_list[get_song_id_from_chart(arg0)].chart_path;
+var modFilePath = chartPath + arg1 + ".vsm";
 var chart = undefined;
 
 if (file_exists(filePath))
@@ -8,7 +9,7 @@ if (file_exists(filePath))
 }
 else
 {
-    chart = load_text_chart(arg0,arg1);
+    chart = load_text_chart(chartPath, arg1);
 }
 
 

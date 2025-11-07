@@ -1,8 +1,8 @@
-function load_text_chart(arg0, arg1)//arg0<<chart_id, arg<<diff_name
+function load_text_chart(path, diff)
 {
-    var filePath = working_directory + "Custom Songs/" + arg0 + "/" + arg1 + ".vsc";
-    var modfilePath = working_directory + "Custom Songs/" + arg0 + "/" + arg1 + ".vsm";
-    var modDefinition = load_text_mods(working_directory + "Custom Songs/" + arg0 + "/" + arg1 + ".vsm");
+    var filePath = path + diff + ".vsc";
+    var modfilePath = path + diff + ".vsm";
+    var modDefinition = load_text_mods(path + diff + ".vsm");
     var map = file_text_open_read(filePath);
     var i = 0;
     var lines = [];
@@ -52,9 +52,9 @@ function load_text_chart(arg0, arg1)//arg0<<chart_id, arg<<diff_name
         array_push(notes, noteData);
     }
     
-    array_sort(notes, function(arg0, arg1)
+    array_sort(notes, function(a, b)
     {
-        return arg0.time - arg1.time;
+        return a.time - b.time;
     });
     return 
     {
