@@ -26,6 +26,7 @@ function CustomShatterReader()
                 var songInfo = json_parse(songInfoJson);
                 
                 //songInfo.is_shatter = true;
+                songInfo.chart_path = customPath;
                 songInfo.is_custom = true;
                 songInfo.song_id = array_length(global.shatter_list);
                 
