@@ -7,7 +7,7 @@ if (file_exists(filePath))
 }
 else
 {
-    var chartPath = global.song_list[get_song_id_from_chart(arg0)].chart_path;
+    var chartPath = get_chart_path_from_chart(arg0);
     var modFilePath = chartPath + arg1 + ".vsm";
     chart = load_text_chart(chartPath, arg1);
 }

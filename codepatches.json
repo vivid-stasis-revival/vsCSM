@@ -1,7 +1,7 @@
 [
     {
         "Entry": "gml_Object_initiategame_Other_10",
-        "ExternalFile": "songinfo.gml",
+        "Value": "CustomSongReader();",
         "Type": 3
     },
     {
