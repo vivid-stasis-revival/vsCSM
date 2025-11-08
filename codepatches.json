@@ -134,5 +134,11 @@
         "Find": "draw_text(316 - artist_width, 2 + top_y, name);",
         "Value": "draw_text(316 - artist_width, 2 + top_y, name); if (struct_exists(selected_song, \"is_custom\")) {draw_sprite(sp_custom, 0, 2, 7 + top_y);}",
         "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_songselect_Draw_73",
+        "Find": "selected_song.is_original",
+        "Value": "selected_song.is_original || selected_song.is_custom",
+        "Type": 1
     }
 ]
