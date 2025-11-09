@@ -8,6 +8,7 @@
  **（注意，格式说明内"//"开头的文字是我为了介绍方便加的注释，实际json文件内不能有注释！）**
 
 songpack_info.json格式：
+
 ```json5
 {
     "name":"Test Pack",//曲包名
@@ -107,6 +108,7 @@ songpack_info.json格式：
 **无注释版本**
 
 songpack_info.json：
+
 ```json
 {
     "name":"Test Pack",

@@ -20,7 +20,7 @@
     "note_designer_3": "0",
     "difficulty_constant_4": 18,
     "difficulty_display_4": "18",
-    "note_designer_4": "congrats that you will waste 30 minutes! =owo=",
+    "note_designer_4": "congrats that you will waste 30 minutes and gain a ???",
     "unlock": {
         "type": 0,
         "enc_type": 0,
@@ -29,5 +29,5 @@
         "hint": "",
         "enc_hint": ""
     },
-    "encdata": {}
+    "enc_data": {}
 }
