@@ -1,6 +1,22 @@
 在你steam的游戏目录下找到Custom Songs文件夹（没有就创建一个），之后将你的自制谱文件夹拖进去就行了。
 <br>
 
+*在新版本(2.2.0+)你可以在Custom Songs文件夹下新建一个曲包文件夹，再把自制谱文件夹拖进去；一个曲包文件夹需要songpack_info.json文件，下文将给出格式；不拖入曲包文件夹直接放在Custom Songs下的自制谱文件夹将被归类到Custom Songs曲包*
+
+<br>
+
+ **（注意，格式说明内"//"开头的文字是我为了介绍方便加的注释，实际json文件内不能有注释！）**
+
+songpack_info.json格式：
+```json5
+{
+    "name":"Test Pack",//曲包名
+    "description":"awawawa",//曲包简介
+    "color1":16777215,//曲包方框两边渐变色的顶部颜色；需要填转为10进制后的HEX颜色，下同
+    "color2":16777215//曲包方框两边渐变色的底部颜色
+}
+```
+
 一个自制谱文件夹有以下文件：
 
 - music.ogg
@@ -11,7 +27,7 @@
 - .vmv特效信息文件（非必须，没有这个文件将无法显示gimmick stats）
 - info.json，shatterinfo.json（二者至少有一个）
 
-一个完整的info.json文件如下 **（注意，"//"开头的文字是我为了介绍方便加的注释，实际info.json和shatterinfo.json内不能有注释！）**
+一个完整的info.json文件如下
 
 ```json5
 {
@@ -29,7 +45,7 @@
     "difficulty_constant_1": 0,//OPENING难度值
     "difficulty_display_1": "0",//OPENING显示的难度
     "note_designer_1": "N/A",//OPENING的谱师名
-    //往下2为MIDDLE，3为FINALE，4为ENCORE；
+    //往下2为MIDDLE，3为FINALE，4为ENCORE(BACKSTAGE)；
     "difficulty_constant_2": 0,
     "difficulty_display_2": "0",
     "note_designer_2": "N/A",
@@ -90,9 +106,19 @@
 
 **无注释版本**
 
+songpack_info.json：
+```json
+{
+    "name":"Test Pack",
+    "description":"awawawa",
+    "color1":16777215,
+    "color2":16777215
+}
+```
+
 info.json:
 
-```json5
+```json
 {
     "chart_id": "cusi",
     "name": "SuddeNDeath",
@@ -140,7 +166,7 @@ info.json:
 
 shatterinfo.json:
 
-```json5
+```json
 {"chart_id": "cusi",
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",
