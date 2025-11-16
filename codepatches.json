@@ -138,7 +138,7 @@
     {
         "Entry": "gml_Object_o_songselect_Draw_73",
         "Find": "selected_song.is_original",
-        "Value": "selected_song.is_original || selected_song.is_custom",
+        "Value": "selected_song.is_original || variable_struct_exists(selected_song,\"is_custom\")",
         "Type": 1
     }
 ]
