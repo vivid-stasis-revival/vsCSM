@@ -1,6 +1,6 @@
 function CustomShatterReader()
 {
-    var log = file_text_open_write(working_directory + "CustomSongMod_log_shatter.txt");
+    var log = file_text_open_append(working_directory + "CustomSongMod_log_shatter.txt");
     
     if (directory_exists("Custom Songs/"))
     {
@@ -89,7 +89,7 @@ function CustomShatterReader()
 }
 
 function readCustomSongInfo(dir){
-    var log = file_text_open_write(working_directory + "CustomSongMod_log.txt");
+    var log = file_text_open_append(working_directory + "CustomSongMod_log.txt");
     file_text_write_string(log, "Loading song in directory " + dir + "\n");
 
     var songInfo = {};
@@ -188,7 +188,7 @@ function CustomSongReader()
     
 global.custom_song_packs = [];
 var customSongList = [];
-var log = file_text_open_write(working_directory + "CustomSongMod_log.txt");
+var log = file_text_open_append(working_directory + "CustomSongMod_log.txt");
 
 if (directory_exists("Custom Songs/"))
 {

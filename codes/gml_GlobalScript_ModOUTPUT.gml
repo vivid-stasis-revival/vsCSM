@@ -4,7 +4,7 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
         chartid="uk"
     }
     var modtext = "";
-    var text_file = file_text_open_write(working_directory + "Gimmick_OutPut/" + "" + "_" + chartdiff +"_"+chartid+ ".vsm");
+    var text_file = file_text_open_append(working_directory + "Gimmick_OutPut/" + "" + "_" + chartdiff +"_"+chartid+ ".vsm");
     var obj = modDEF.data.obj;
     var pxy = modDEF.data.proxies;
     var mod_list = modDEF.mods;

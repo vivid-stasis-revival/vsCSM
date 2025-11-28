@@ -89,7 +89,7 @@ function load_text_mods(arg0)
                 ds_list_add(modsDefinition.mods, m);
             }
         }
-        else if (mode == "mpf")
+        else if (mode == "mpf" && instance_exists(cc))
         {
             var obj_ins = getModGimmickObj(modsDefinition.data.obj);
             var parts = string_split(line, ",");

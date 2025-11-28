@@ -31,25 +31,25 @@
     {
         "Entry": "gml_GlobalScript_save_highscores",
         "Find": "ini_open(global.highscore_file);",
-        "ExternalFile": "save_highscores.gml",
+        "ExternalFile": "SaveLoadHighScores\\save_highscores.gml",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_load_highscores",
         "Find": "var load_score =",
-        "ExternalFile": "load_highscores_part1.gml",
+        "ExternalFile": "SaveLoadHighScores\\load_highscores_part1.gml",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_load_highscores",
         "Find": "scores[d] = load_score(string(i), diff_names[d]);",
-        "ExternalFile": "load_highscores_part2.gml",
+        "ExternalFile": "SaveLoadHighScores\\load_highscores_part2.gml",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_load_highscores",
         "Find": "global.highscores.shatter[i] = load_score(string(i), song.difficulty_name);",
-        "ExternalFile": "load_highscores_part3.gml",
+        "ExternalFile": "SaveLoadHighScores\\load_highscores_part3.gml",
         "Type": 1
     },
     {
@@ -96,7 +96,7 @@
     {
         "Entry": "gml_GlobalScript_LoadSongData",
         "Find": "ini_open(working_directory + \"Charts/\" + arg0 + \"/\" + arg1 + \".vmv\");",
-        "ExternalFile": "load_custom_stats_p1.gml",
+        "ExternalFile": "CustomStat\\load_custom_stats_p1.gml",
         "Type": 1
     },
     {
@@ -108,13 +108,13 @@
     {
         "Entry": "gml_GlobalScript_LoadSongData",
         "Find": "var statName = baseName + \".stats\";",
-        "ExternalFile": "load_custom_stats_p2.gml",
+        "ExternalFile": "CustomStat\\load_custom_stats_p2.gml",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_LoadSongData",
         "Find": "var hash = sha1_file(binName);",
-        "ExternalFile": "load_custom_stats_p3.gml",
+        "ExternalFile": "CustomStat\\load_custom_stats_p3.gml",
         "Type": 1
     },
     {
@@ -126,7 +126,7 @@
     {
         "Entry": "gml_GlobalScript_LoadSongData",
         "Find": "data = parseSongDataFromBinary(binName, arg0, arg3, arg1 == \"ENCORE\");",
-        "ExternalFile": "load_custom_stats_p4.gml",
+        "ExternalFile": "CustomStat\\load_custom_stats_p4.gml",
         "Type": 1
     },
     {
@@ -140,5 +140,23 @@
         "Find": "selected_song.is_original",
         "Value": "selected_song.is_original || variable_struct_exists(selected_song,\"is_custom\")",
         "Type": 1
+    },
+    {
+        "Entry": "gml_Room_scene_gameplay_Create",
+        "Find": "instance_create_depth(0, 0, -10, gameplayhud);",
+        "ExternalFile": "FXLayerFix\\fx_layer_add.gml",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_Object_obj_base_gimmick_Create_0",
+        "Function": "",
+        "ExternalFile": "FXLayerFix\\layer_control_gimmicks_p1.gml",
+        "Type": 3
+    },
+    {
+        "Entry": "gml_Object_obj_base_gimmick_Step_0",
+        "ExternalFile": "FXLayerFix\\layer_control_gimmicks_p2.gml",
+        "Function": "",
+        "Type": 3
     }
 ]
