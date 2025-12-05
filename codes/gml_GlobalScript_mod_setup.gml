@@ -56,40 +56,6 @@ global.easeBytes =
 };
 global.mods = {};
 global.mod_weight = {};
-global.easing_refalias=
-    {
-        "ref script 113813": "linear",
-        "ref script 113826": "inSine",
-        "ref script 113827": "outSine",
-        "ref script 113828": "inOutSine",
-        "ref script 113814": "inQuad",
-        "ref script 113815": "outQuad",
-        "ref script 113816": "inOutQuad",
-        "ref script 113817": "inCubic",
-        "ref script 113818": "outCubic",
-        "ref script 113819": "inOutCubic",
-        "ref script 113820": "inQuart",
-        "ref script 113821": "outQuart",
-        "ref script 113822": "inOutQuart",
-        "ref script 113823": "inQuint",
-        "ref script 113824": "outQuint",
-        "ref script 113825": "inOutQuint",
-        "ref script 113832": "inExpo",
-        "ref script 113833": "outExpo",
-        "ref script 113834": "inOutExpo",
-        "ref script 113829": "inCirc",
-        "ref script 113830": "outCirc",
-        "ref script 113831": "inOutCirc",
-        "ref script 113835": "inBack",
-        "ref script 113836": "outBack",
-        "ref script 113837": "inOutBack",
-        "ref script 113841": "inElastic",
-        "ref script 113842": "outElastic",
-        "ref script 113843": "inOutElastic",
-        "ref script 113838": "inBounce",
-        "ref script 113839": "outBounce",
-        "ref script 113840": "inOutBounce"
-    };
 
 function addGlobalMod(arg0, arg1)
 {
@@ -178,6 +144,7 @@ addGlobalMod("fx_glow", 1);
 addGlobalMod("fx_particleglow", 0.5);
 addGlobalMod("pburstspeed", 0.5);
 addGlobalMod("freeze", 2);
+addGlobalMod("enable_hue",0);
 
 function isChartSpecificMod(arg0)
 {

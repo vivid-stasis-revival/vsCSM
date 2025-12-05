@@ -4,7 +4,7 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
         chartid="uk"
     }
     var modtext = "";
-    var text_file = file_text_open_append(working_directory + "Gimmick_OutPut/" + "" + "_" + chartdiff +"_"+chartid+ ".vsm");
+    var text_file = file_text_open_write(working_directory + "Gimmick_OutPut/" + "" + "_" + chartdiff +"_"+chartid+ ".vsm");
     var obj = modDEF.data.obj;
     var pxy = modDEF.data.proxies;
     var mod_list = modDEF.mods;
@@ -20,7 +20,7 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
     for (i = 0; i < ds_list_size(mod_list); i++)
     {
         gimmick = ds_list_find_value(mod_list, i);
-        e = variable_struct_get(global.easing_refalias, gimmick.e);
+        e = script_get_name(gimmick.e)
         v1 = gimmick.v1;
         v2 = gimmick.v2;
         
@@ -40,7 +40,7 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
         for (i = 0; i < ds_list_size(mpf_list); i++)
         {
             mpf = ds_list_find_value(mpf_list, i);
-            modtext += string("{0},{1},{2}\n", mpf.b, mpf.e, mpf.f);
+            modtext += string("{0},{1},{2}\n", mpf.b, mpf.e,script_get_name(mpf.f));
         }
     }
     

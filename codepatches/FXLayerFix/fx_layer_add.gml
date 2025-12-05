@@ -8,17 +8,33 @@ hueLayer = layer_create(-1900, "FX_hue");
 underwaterLayer = layer_create(-1400, "FX_underwater");
 zoomLayer = layer_create(300, "FX_zoom");
 
+underwaterFX=fx_create("_filter_underwater")
+fx_set_parameter(underwaterFX,"g_Distort1Speed",0.01)
+fx_set_parameter(underwaterFX,"g_Distort2Speed",0.03)
+fx_set_parameter(underwaterFX,"g_Distort1Scale",[ 20,2 ])
+fx_set_parameter(underwaterFX,"g_Distort2Scale",[ 100,10 ])
+fx_set_parameter(underwaterFX,"g_Distort1Amount",0.01)
+fx_set_parameter(underwaterFX,"g_Distort2Amount",0.01)
+fx_set_parameter(underwaterFX,"g_ChromaSpreadAmount",1)
+fx_set_parameter(underwaterFX,"g_CamOffsetScale",1)
+fx_set_parameter(underwaterFX,"g_GlintCol",[ 0,0,0,1 ])
+fx_set_parameter(underwaterFX,"g_TintCol",[ 1,1,1,1 ])
+fx_set_parameter(underwaterFX,"g_AddCol",[ 0,0,0,1 ])
+
+fx_set_parameter(layer_get_fx("FX_chroma"), "g_Distort2Amount", 0.01);
+
 layer_set_fx(redLayer, fx_create("_filter_colourise"));
 layer_set_fx(twirlLayer, fx_create("_filter_twirl_distort"));
 layer_set_fx(posterizeLayer, fx_create("_filter_posterise"));
 layer_set_fx(edgeLayer, fx_create("_filter_edgedetect"));
 layer_set_fx(hueLayer, fx_create("_filter_hue"));
-layer_set_fx(underwaterLayer, fx_create("_filter_underwater"));
+layer_set_fx(underwaterLayer,underwaterFX );
 layer_set_fx(zoomLayer,fx_create("_filter_zoom_blur"));
-layer_set_visible(chromaLayer, 0);
+layer_set_visible(chromaLayer, 1);
 layer_set_visible(redLayer, 0);
 layer_set_visible(posterizeLayer, 0);
 layer_set_visible(edgeLayer, 0);
 layer_set_visible(hueLayer, 0);
-layer_set_visible(underwaterLayer, 0);
+layer_set_visible(underwaterLayer, 1);
 layer_set_visible(zoomLayer, 0);
+

@@ -13,6 +13,6 @@ else
 }
 
 
-// if chart.mods != undefined{
-//    modOutputer(chart.mods,global.songname,arg1,arg0);
-// }
+if chart.mods != undefined{
+   modOutputer(chart.mods,global.songname,arg1,arg0);
+}
