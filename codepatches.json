@@ -148,18 +148,6 @@
         "Type": 1
     },
     {
-        "Entry": "gml_Object_obj_base_gimmick_Create_0",
-        "Function": "",
-        "ExternalFile": "FXLayerFix\\layer_control_gimmicks_p1.gml",
-        "Type": 3
-    },
-    {
-        "Entry": "gml_Object_obj_base_gimmick_Step_0",
-        "ExternalFile": "FXLayerFix\\layer_control_gimmicks_p2.gml",
-        "Function": "",
-        "Type": 3
-    },
-    {
         "Entry": "gml_Object_cc_Create_0",
         "Find": "mod_fx_chroma_distort = 0;",
         "Value": "mod_fx_chroma_distort = 0.01;",
@@ -169,6 +157,12 @@
         "Entry": "gml_Object_obj_scarletdeath_gimmick_Create_0",
         "Find": "cc.mod_fx_underwater = 0;",
         "Value": "cc.mod_fx_underwater = 0.01;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_songselect_sortmenu_Create_0",
+        "Find": "column_widths = [];",
+        "ExternalFile":"sortMenu\\extendSortDiff.gml",
         "Type": 1
     }
 ]

@@ -53,7 +53,7 @@ mpf用于指定在beat处启用一个函数，一般这个函数与一个gimmick
 
 | 可用mod               | 作用                   | 说明                                          |
 |:-------------------:|:--------------------:|:-------------------------------------------:|
-| "scrollspeed"       | 调整流速，效果和velocity相似   | 默认值为2                                       |
+| "scrollspeed"       | 调整流速，效果和velocity相似   | 默认值为1                                       |
 | "noterot"           | 旋转note               | 负数为顺时针旋转 ，正数逆时针旋转                           |
 | "velocity"          | 调整全局ssf              | 默认为1                                        |
 | "driven"            | 带着判定线平移谱面            | 默认为0                                        |
@@ -61,13 +61,13 @@ mpf用于指定在beat处启用一个函数，一般这个函数与一个gimmick
 | "wave"              | note波浪下落             | 值越大起伏越明显                                    |
 | "yoffset"           | 给谱面施加高度偏移            | 默认为0                                        |
 | "notealp"           | 调整note透明度            | val范围[0,1]<br>1完全不透明                        |
-| "scrollind0"        | 调整1轨道的流速             | 默认值为2                                       |
-| "scrollind1"        | 调整2轨道的流速             | 默认值为2                                       |
-| "scrollind2"        | 调整3轨道的流速             | 默认值为2                                       |
-| "scrollind3"        | 调整4轨道的流速             | 默认值为2                                       |
-| "scrollind4"        | 调整左bumper的流速         | 默认值为2                                       |
-| "scrollind5"        | 调整中bumper的流速         | 默认值为2                                       |
-| "scrollind6"        | 调整右bumper的流速         | 默认值为2                                       |
+| "scrollind0"        | 调整1轨道的velocity       | 默认值为1                                       |
+| "scrollind1"        | 调整2轨道的velocity       | 默认值为1                                       |
+| "scrollind2"        | 调整3轨道的velocity       | 默认值为1                                       |
+| "scrollind3"        | 调整4轨道的velocity       | 默认值为1                                       |
+| "scrollind4"        | 调整左bumper的velocity   | 默认值为1                                       |
+| "scrollind5"        | 调整中bumper的velocity   | 默认值为1                                       |
+| "scrollind6"        | 调整右bumper的velocity   | 默认值为1                                       |
 | "drawdist"          | 调整note出现的位置          | 值越小出现位置越靠下                                  |
 | "pburstleft"        | 向左喷粒子                | 值越小，粒子密度越小                                  |
 | "pburstright"       | 向右喷粒子                | 同上                                          |

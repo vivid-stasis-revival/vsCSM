@@ -1,13 +1,41 @@
-在你steam的游戏目录下找到Custom Songs文件夹（没有就创建一个），之后将你的自制谱文件夹拖进去就行了。
+## mod安装方法
+&emsp;&emsp;将该mod解压后，放入vsmodloader目录下的mods文件夹内，之后运行vsmodloader目录下的vividstasisModLoader.exe即可。<br>
+最后，你vsmodloader的mods目录应该是这样：<br>
+
+```
+|- mods
+  └── CustomSongMod
+     └── codepatches等文件夹
+```
+
 <br>
 
-*在新版本(2.2.0+)你可以在Custom Songs文件夹下新建一个曲包文件夹，再把自制谱文件夹拖进去；一个曲包文件夹需要songpack_info.json文件，下文将给出格式；不拖入曲包文件夹直接放在Custom Songs下的自制谱文件夹将被归类到Custom Songs曲包*
 
-<br>
 
+## 格式说明 & 使用指南
  **（注意，格式说明内"//"开头的文字是我为了介绍方便加的注释，实际json文件内不能有注释！）**
 
-songpack_info.json格式：
+ <br>
+
+*&emsp;&emsp;在新版本(2.2.0+)你可以在Custom Songs文件夹下新建一个曲包文件夹，再把自制谱文件夹拖进去；不拖入曲包文件夹直接放在Custom Songs下的自制谱文件夹将被直接归类到All Custom Songs曲包。*
+
+<br>
+
+**一个自制谱文件夹有以下文件：**
+
+- music.ogg
+- jacket.png（非必须，图片格式可以是png,jpg,jpeg,gif）
+- preview.ogg（非必须）
+- .vsc谱面文件
+- .vsm特效文件（非必须）
+- info.json，shatterinfo.json（二者至少有一个）
+
+<br>
+
+**一个曲包文件夹需要有songpack_info.json和自制谱文件夹；**
+
+<br>
+一个完整的songpack_info.json如下：
 
 ```json5
 {
@@ -18,17 +46,7 @@ songpack_info.json格式：
 }
 ```
 
-一个自制谱文件夹有以下文件：
-
-- music.ogg
-- jacket.png（非必须，图片格式可以是png,jpg,jpeg,gif）
-- preview.ogg（非必须）
-- .vsc谱面文件
-- .vsm特效文件（非必须）
-- .vmv特效信息文件（非必须，没有这个文件将无法显示gimmick stats）
-- info.json，shatterinfo.json（二者至少有一个）
-
-一个完整的info.json文件如下
+一个完整的info.json文件如下：
 
 ```json5
 {
@@ -64,11 +82,9 @@ songpack_info.json格式：
         "hint": "",
         "enc_hint": ""
     },
-    //BACKSTAGE的信息，可以不写（BACKSTAGE本质上是修改ENCORE难度的音源，曲绘等信息
-    //所以有这项必须带ENCORE难度）
-    //谱师名和难度相关要填上面的diffculty4部分
-
-    //以下的项均可不填，不填的项与上面相同
+    /*BACKSTAGE的信息，可以不写，只要写了就会被解析为BACKSTAGE（BACKSTAGE本质上是修改ENCORE难度的音源，曲绘等信息，所以有这项必须带ENCORE难度）
+    谱师名和难度相关要填上面的diffculty4部分
+    以下的项均可不填，不填的项与上面相同*/
     "enc_data":{
         "audio_id":"miao.ogg",//曲目文件
         "preview_id":"miao_preview.ogg",//预览音频文件
@@ -82,7 +98,7 @@ songpack_info.json格式：
 }
 ```
 
-一个完整的shatterinfo.json文件如下
+一个完整的shatterinfo.json文件如下：
 
 ```json5
 {"chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名

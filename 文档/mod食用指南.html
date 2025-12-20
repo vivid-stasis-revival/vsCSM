@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>mod&#x5b89;&#x88c5;&#x65b9;&#x6cd5;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h2 id="mod安装方法">mod安装方法</h2>
+<p>  将该mod解压后，放入vsmodloader目录下的mods文件夹内，之后运行vsmodloader目录下的vividstasisModLoader.exe即可。<br>
+最后，你vsmodloader的mods目录应该是这样：<br></p>
+<pre><code>|- mods
+  └── CustomSongMod
+     └── codepatches等文件夹
+</code></pre>
+<br>
+<h2 id="格式说明--使用指南">格式说明 &amp; 使用指南</h2>
+<p><strong>（注意，格式说明内&quot;//&quot;开头的文字是我为了介绍方便加的注释，实际json文件内不能有注释！）</strong></p>
+ <br>
+<p><em>  在新版本(2.2.0+)你可以在Custom Songs文件夹下新建一个曲包文件夹，再把自制谱文件夹拖进去；不拖入曲包文件夹直接放在Custom Songs下的自制谱文件夹将被直接归类到All Custom Songs曲包。</em></p>
+<br>
+<p><strong>一个自制谱文件夹有以下文件：</strong></p>
+<ul>
+<li>music.ogg</li>
+<li>jacket.png（非必须，图片格式可以是png,jpg,jpeg,gif）</li>
+<li>preview.ogg（非必须）</li>
+<li>.vsc谱面文件</li>
+<li>.vsm特效文件（非必须）</li>
+<li>info.json，shatterinfo.json（二者至少有一个）</li>
+</ul>
+<br>
+<p><strong>一个曲包文件夹需要有songpack_info.json和自制谱文件夹；</strong></p>
+<br>
+一个完整的songpack_info.json如下：
+<pre><code class="language-json5"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Test Pack&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲包名</span>
+    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;awawawa&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲包简介</span>
+    <span class="hljs-attr">&quot;color1&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">16777215</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲包方框两边渐变色的顶部颜色；需要填转为10进制后的HEX颜色，下同</span>
+    <span class="hljs-attr">&quot;color2&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">16777215</span><span class="hljs-comment">//曲包方框两边渐变色的底部颜色</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>一个完整的info.json文件如下：</p>
+<pre><code class="language-json5"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;chart_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cusi&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">//谱面识别名，需要和谱面文件夹同名</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SuddeNDeath&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲名</span>
+    <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sudde\u88a0Death&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//原始曲名</span>
+    <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;xi vs. Morimori Atsushi&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲师名</span>
+    <span class="hljs-attr">&quot;sort_artists&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;morimori atsushi&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-string">&quot;xi&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//按曲师分类时使用的曲师名，可以填多个曲师，没写这项会把artist放进去</span>
+    <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;236&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//bpm的显示值，最好不要乱填，stats计算以这个值作为平均bpm</span>
+    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;9.9.9&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_original&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_published&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;jacket_artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲绘作者</span>
+    <span class="hljs-attr">&quot;has_encore&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//有encore难度这个必须为true；</span>
+    <span class="hljs-attr">&quot;difficulty_constant_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//OPENING难度值</span>
+    <span class="hljs-attr">&quot;difficulty_display_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//OPENING显示的难度</span>
+    <span class="hljs-attr">&quot;note_designer_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;N/A&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//OPENING的谱师名</span>
+    <span class="hljs-comment">//往下2为MIDDLE，3为FINALE，4为ENCORE(BACKSTAGE)；</span>
+    <span class="hljs-attr">&quot;difficulty_constant_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;N/A&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;IV\&quot;&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;unlock&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;enc_type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;per_difficulty&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;hidden&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;hint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;enc_hint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-comment">/*BACKSTAGE的信息，可以不写，只要写了就会被解析为BACKSTAGE（BACKSTAGE本质上是修改ENCORE难度的音源，曲绘等信息，所以有这项必须带ENCORE难度）
+    谱师名和难度相关要填上面的diffculty4部分
+    以下的项均可不填，不填的项与上面相同*/</span>
+    <span class="hljs-attr">&quot;enc_data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;audio_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao.ogg&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲目文件</span>
+        <span class="hljs-attr">&quot;preview_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao_preview.ogg&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//预览音频文件</span>
+        <span class="hljs-attr">&quot;jacket&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao.png&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//曲绘文件</span>
+        <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;222&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//bpm显示</span>
+        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;SuddeNDeath meow&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Sudde\u88a0Death meow&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;jacket_designer&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;cusi&quot;</span>
+    <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>一个完整的shatterinfo.json文件如下：</p>
+<pre><code class="language-json5"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;chart_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cusi&quot;</span><span class="hljs-punctuation">,</span> <span class="hljs-comment">//谱面识别名，需要和谱面文件夹同名</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SuddeNDeath&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sudde\u88a0Death&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;xi vs. Morimori Atsushi&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;236&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;9.9.9&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_original&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_published&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;jacket_artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ZHEPUSHUIXIEDE&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//shatter谱的难度名；注意：shatter谱的vsc文件名称要与这项同名</span>
+    <span class="hljs-attr">&quot;difficulty_number&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18+&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//shatter谱的难度值</span>
+    <span class="hljs-attr">&quot;note_designer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;IV\&quot;&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-comment">//shatter谱的谱师名</span>
+    <span class="hljs-attr">&quot;ticket_earns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-number">9999</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-number">9999</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-number">9999</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-comment">//打这个shatter获得的ticket数</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p><strong>无注释版本</strong></p>
+<p>songpack_info.json：</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Test Pack&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;description&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;awawawa&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;color1&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">16777215</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;color2&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-number">16777215</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>info.json:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;chart_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cusi&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SuddeNDeath&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sudde\u88a0Death&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;xi vs. Morimori Atsushi&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;sort_artists&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">[</span><span class="hljs-string">&quot;morimori atsushi&quot;</span><span class="hljs-punctuation">,</span><span class="hljs-string">&quot;xi&quot;</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;236&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;9.9.9&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_original&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_published&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;jacket_artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;has_encore&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;N/A&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_2&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;N/A&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_3&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_constant_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">1</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_display_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer_4&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;IV\&quot;&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;unlock&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;enc_type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-number">0</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;per_difficulty&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;hidden&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;hint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;enc_hint&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span>
+    <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;enc_data&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">&quot;audio_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao.ogg&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;preview_id&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao_preview.ogg&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;jacket&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;miao.png&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;222&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;SuddeNDeath meow&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;Sudde\u88a0Death meow&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">&quot;jacket_designer&quot;</span><span class="hljs-punctuation">:</span><span class="hljs-string">&quot;cusi&quot;</span>
+    <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>shatterinfo.json:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">&quot;chart_id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;cusi&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SuddeNDeath&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;formatted_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Sudde\u88a0Death&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;xi vs. Morimori Atsushi&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;bpm_display&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;236&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;9.9.9&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_original&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;is_published&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;jacket_artist&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;idk&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ZHEPUSHUIXIEDE&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;difficulty_number&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;18+&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;note_designer&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;\&quot;IV\&quot;&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;ticket_earns&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-number">9999</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-number">9999</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-number">9999</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+
+            
+            
+        </body>
+        </html>

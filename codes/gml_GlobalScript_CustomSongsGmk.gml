@@ -29,7 +29,7 @@ function load_text_mods(arg0)
         
         if (line == "")
             continue;
-        
+
         if (line == "mpf")
         {
             mode = "mpf";
