@@ -9,7 +9,7 @@
         
         for (var d = 0; d < 5; d++)
         {
-            var props = [["score", ""], ["game_score", "_GAME"], ["max_combo", "_MAXCOMBO"], ["lamp", "_COMBO"]];
+            var props = [["score", ""], ["game_score", "_GAME"], ["max_combo", "_MAXCOMBO"], ["lamp", "_COMBO"],["game_perc", "_GAMEPERC"]];
             
             for (var p = 0; p < array_length(props); p++)
             {
@@ -30,7 +30,7 @@
         if (!struct_exists(global.shatter_list[i], "is_custom"))
             continue;
         
-        var props = [["score", ""], ["game_score", "_GAME"], ["max_combo", "_MAXCOMBO"], ["lamp", "_COMBO"]];
+        var props = [["score", ""], ["game_score", "_GAME"], ["max_combo", "_MAXCOMBO"], ["lamp", "_COMBO"],["game_perc", "_GAMEPERC"]];
         
         for (var p = 0; p < array_length(props); p++)
         {
