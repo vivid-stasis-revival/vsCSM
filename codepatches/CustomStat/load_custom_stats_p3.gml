@@ -11,8 +11,9 @@ var hash_mod;
         }
         is_custom_chart = true;
     }
-    else
+    if (file_exists(binName))
     {
         finalstatName = statName;
         hash = sha1_file(binName);
+        is_custom_chart = false;
     }
