@@ -200,5 +200,17 @@
         "Find": "buffer_delete(arg0);",
         "Value":"try{obj.chartId = buffer_read(arg0, buffer_string);}catch (ex){}buffer_delete(arg0);",
         "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_SendQueuePacket",
+        "Find": "buffer_delete(arg0);",
+        "Value":"for (var i = 0; i < items; i++){try{obj[i].chartId = buffer_read(arg0, buffer_string);}catch (ex){}}buffer_delete(arg0);",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_SendQueuePacket",
+        "Find": "return buffer;",
+        "Value":"for (var i = 0; i < items; i++)buffer_write(buffer, buffer_string, global.song_list[queue[i].songId].chart_id);return buffer;",
+        "Type": 1
     }
 ]
