@@ -172,15 +172,15 @@
         "Type": 0
     },
     {
-        "Entry": "gml_GlobalScript_StartGamePacket",
-        "Find": "song.songId",
-        "Value":"variable_struct_exists(song, \"chartId\") ? get_song_id_from_chart(song.chartId) : song.songId",
-        "Type": 0
-    },
-    {
         "Entry": "gml_GlobalScript_AddSongPacket",
         "Find": "return buffer;",
         "Value":"buffer_write(buffer, buffer_string, global.song_list[arg0.songId].chart_id);return buffer;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_AddSongPacket",
+        "Find": "buffer_delete(arg0);",
+        "Value":"try{obj.songId = get_song_id_from_chart(buffer_read(arg0, buffer_string));}catch (ex){}buffer_delete(arg0);",
         "Type": 1
     },
     {
@@ -190,27 +190,21 @@
         "Type": 1
     },
     {
-        "Entry": "gml_GlobalScript_AddSongPacket",
-        "Find": "buffer_delete(arg0);",
-        "Value":"try{obj.chartId = buffer_read(arg0, buffer_string);}catch (ex){}buffer_delete(arg0);",
-        "Type": 1
-    },
-    {
         "Entry": "gml_GlobalScript_ShadowSongPacket",
         "Find": "buffer_delete(arg0);",
-        "Value":"try{obj.chartId = buffer_read(arg0, buffer_string);}catch (ex){}buffer_delete(arg0);",
-        "Type": 1
-    },
-    {
-        "Entry": "gml_GlobalScript_SendQueuePacket",
-        "Find": "buffer_delete(arg0);",
-        "Value":"for (var i = 0; i < items; i++){try{obj[i].chartId = buffer_read(arg0, buffer_string);}catch (ex){}}buffer_delete(arg0);",
+        "Value":"try{obj.songId = get_song_id_from_chart(buffer_read(arg0, buffer_string));}catch (ex){}buffer_delete(arg0);",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_SendQueuePacket",
         "Find": "return buffer;",
         "Value":"for (var i = 0; i < items; i++)buffer_write(buffer, buffer_string, global.song_list[queue[i].songId].chart_id);return buffer;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_SendQueuePacket",
+        "Find": "buffer_delete(arg0);",
+        "Value":"for (var i = 0; i < items; i++){try{obj[i].songId = get_song_id_from_chart(buffer_read(arg0, buffer_string));}catch (ex){}}buffer_delete(arg0);",
         "Type": 1
     }
 ]
