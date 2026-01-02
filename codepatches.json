@@ -164,5 +164,11 @@
         "Find": "column_widths = [];",
         "ExternalFile":"sortMenu\\extendSortDiff.gml",
         "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_get_rating_completion_value",
+        "Find": "song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\"",
+        "Value":"song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\" || variable_struct_exists(song, \"is_custom\")",
+        "Type": 0
     }
 ]
