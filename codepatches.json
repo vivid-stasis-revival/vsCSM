@@ -170,5 +170,35 @@
         "Find": "song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\"",
         "Value":"song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\" || variable_struct_exists(song, \"is_custom\")",
         "Type": 0
+    },
+    {
+        "Entry": "gml_GlobalScript_StartGamePacket",
+        "Find": "song.songId",
+        "Value":"variable_struct_exists(song, \"chartId\") ? get_song_id_from_chart(song.chartId) : song.songId",
+        "Type": 0
+    },
+    {
+        "Entry": "gml_GlobalScript_AddSongPacket",
+        "Find": "return buffer;",
+        "Value":"buffer_write(buffer, buffer_string, global.song_list[arg0.songId].chart_id);return buffer;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_ShadowSongPacket",
+        "Find": "return buffer;",
+        "Value":"buffer_write(buffer, buffer_string, global.song_list[arg0.songId].chart_id);return buffer;",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_AddSongPacket",
+        "Find": "buffer_delete(arg0);",
+        "Value":"try{obj.chartId = buffer_read(arg0, buffer_string);}catch (ex){}buffer_delete(arg0);",
+        "Type": 1
+    },
+    {
+        "Entry": "gml_GlobalScript_ShadowSongPacket",
+        "Find": "buffer_delete(arg0);",
+        "Value":"try{obj.chartId = buffer_read(arg0, buffer_string);}catch (ex){}buffer_delete(arg0);",
+        "Type": 1
     }
 ]
