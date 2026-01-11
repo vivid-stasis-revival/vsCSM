@@ -167,9 +167,9 @@
     },
     {
         "Entry": "gml_GlobalScript_get_rating_completion_value",
-        "Find": "song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\"",
-        "Value":"song.name == \"N/A\" || song.name == \"Song Name\" || song.name == \"Tutorial\" || variable_struct_exists(song, \"is_custom\")",
-        "Type": 0
+        "Find": "var song = global.song_list[s];",
+        "Value":"var song = global.song_list[s]; if(struct_exists(song,\"is_custom\")) continue;",
+        "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_AddSongPacket",
