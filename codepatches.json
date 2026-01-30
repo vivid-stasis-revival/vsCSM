@@ -184,6 +184,12 @@
         "Type": 1
     },
     {
+        "Entry": "gml_GlobalScript_AddSongPacket",
+        "Find": "BasePacket(arg0, true, 3)",
+        "Value":"BasePacket(arg0, true, 3, buffer_grow)",
+        "Type": 1
+    },
+    {
         "Entry": "gml_GlobalScript_ShadowSongPacket",
         "Find": "return buffer;",
         "Value":"buffer_write(buffer, buffer_string, global.song_list[arg0.songId].chart_id);return buffer;",
