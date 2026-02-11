@@ -1,7 +1,13 @@
 [
     {
-        "Entry": "gml_Object_initiategame_Other_10",
+        "Entry": "gml_Object_initiategame_Create_0",
+        "ExternalFile": "mod_info.gml",
+        "Type": 2
+    },
+    {
+        "Entry": "gml_GlobalScript_load_song_information",
         "Value": "CustomSongReader();",
+        "Function": "load_song_information",
         "Type": 3
     },
     {
