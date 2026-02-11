@@ -6,9 +6,9 @@
     },
     {
         "Entry": "gml_GlobalScript_load_song_information",
-        "Value": "CustomSongReader();",
-        "Function": "load_song_information",
-        "Type": 3
+        "Find": "file_text_close(artists_file);",
+        "Value": "file_text_close(artists_file);CustomSongReader();",
+        "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_create_song_packs",

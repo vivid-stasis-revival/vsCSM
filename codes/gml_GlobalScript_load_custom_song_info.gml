@@ -206,5 +206,4 @@ function CustomSongReader()
         color2: 16777215,
         description: "Custom Songs."
     });
-    create_song_packs();
 }
