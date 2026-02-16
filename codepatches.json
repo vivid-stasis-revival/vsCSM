@@ -218,5 +218,11 @@
         "Find": "buffer_delete(arg0);",
         "Value":"for (var i = 0; i < items; i++){try{obj[i].songId = get_song_id_from_chart(buffer_read(arg0, buffer_string));}catch (ex){}}buffer_delete(arg0);",
         "Type": 1
+    },
+    {
+        "Entry": "gml_Object_o_newmenu_main_Create_0",
+        "Function": "",
+        "ExternalFile":"ReloadCustoms\\reload_customs_btn.gml",
+        "Type": 3
     }
 ]
