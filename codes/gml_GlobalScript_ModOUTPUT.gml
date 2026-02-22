@@ -17,9 +17,9 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
     modtext += string("!proxies:{0}\n", pxy);
     modtext += string("!obj:{0}\n", obj);
     
-    for (i = 0; i < ds_list_size(mod_list); i++)
+    for (i = 0; i < array_length(mod_list); i++)
     {
-        gimmick = ds_list_find_value(mod_list, i);
+        gimmick = mod_list[i];
         e = script_get_name(gimmick.e)
         v1 = gimmick.v1;
         v2 = gimmick.v2;
@@ -35,11 +35,11 @@ function modOutputer(modDEF, songname, chartdiff,chartid=0)
     
     modtext += "mpf\n";
     
-    if (ds_list_size(mpf_list) != 0)
+    if (array_length(mpf_list) != 0)
     {
-        for (i = 0; i < ds_list_size(mpf_list); i++)
+        for (i = 0; i < array_length(mpf_list); i++)
         {
-            mpf = ds_list_find_value(mpf_list, i);
+            mpf = mpf_list[i];
             modtext += string("{0},{1},{2}\n", mpf.b, mpf.e,script_get_name(mpf.f));
         }
     }

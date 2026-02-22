@@ -1,7 +1,7 @@
 function load_text_mods(arg0)
 {
-    var ds_mods = ds_list_create();
-    var ds_mpf = ds_list_create();
+    var ds_mods = [];
+    var ds_mpf = [];
     var modsDefinition = 
     {
         data: 
@@ -86,7 +86,7 @@ function load_text_mods(arg0)
                 };
                 m.w = variable_struct_get(global.mod_weight, m.m);
                 m.e = variable_struct_get(global.eases, ease);
-                ds_list_add(modsDefinition.mods, m);
+                array_push(modsDefinition.mods, m);
             }
         }
         else if (mode == "mpf" && instance_exists(cc))
@@ -99,7 +99,7 @@ function load_text_mods(arg0)
                 e: real(parts[1])
             };
             m.f = variable_struct_get(obj_ins.obj.funcs, parts[2]);
-            ds_list_add(modsDefinition.perFrame, m);
+            array_push(modsDefinition.perFrame, m);
         }
     }
     

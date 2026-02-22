@@ -26,7 +26,7 @@ function load_text_chart(path, diff)
         var type = real(parts[1]);
         var lane = real(parts[2]);
         var extra = {};
-        var extraData = {};
+        var extra = {};
         var endTime = time;
         
         if (array_length(parts) > 3)
@@ -37,8 +37,10 @@ function load_text_chart(path, diff)
             }
             else if (type == 3)
             {
-                extraData = parse_extra_value(parts[3]);
-                variable_struct_set(extra, 1, variable_struct_get(extraData, "bpm"));
+                extra = parse_extra_value(parts[3]);
+            }
+            else{
+                extra=parts[3]
             }
         }
         
