@@ -18,7 +18,7 @@
     },
     {
         "Entry": "gml_GlobalScript_LoadSong",
-        "Find": "var chart = read_binary_chart(working_directory + \"Charts/\" + arg0 + \"/\" + arg1 + \".vsb\");",
+        "Find": "var chart = read_binary_chart(string(\"{0}Charts/{1}/{2}.vsb\", working_directory, arg0, arg1));",
         "ExternalFile": "LoadSong_Mod.gml",
         "Type": 1
     },
