@@ -1,4 +1,3 @@
-instance_create_depth(0, 0, -10, gameplayhud);
 chromaLayer=layer_get_id("Fx_chroma")
 redLayer = layer_create(-2300, "FX_red");
 twirlLayer = layer_create(-2200, "FX_twirl");

@@ -149,9 +149,9 @@
     },
     {
         "Entry": "gml_Room_scene_gameplay_Create",
-        "Find": "instance_create_depth(0, 0, -10, gameplayhud);",
+        "Function": "",
         "ExternalFile": "FXLayerFix\\fx_layer_add.gml",
-        "Type": 1
+        "Type": 2
     },
     {
         "Entry": "gml_Object_cc_Create_0",
