@@ -222,6 +222,6 @@
         "Entry": "gml_GlobalScript_rating_functions",
         "Find": "global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\"",
         "Value":"global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\" && !variable_struct_exists(global.song_list[i],\"is_custom\")",
-        "Type": 1
+        "Type": 0
     }
 ]
