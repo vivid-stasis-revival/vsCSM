@@ -6,7 +6,7 @@ function readCustomSongPackInfo(dir){
         packInfoJson = packInfoJson + file_text_readln(customPackInfo);
             
     var packInfo = json_parse(packInfoJson);
-    if (!struct_exists(packInfo, "songs"))
+    if (!variable_struct_exists(packInfo, "songs"))
         packInfo.songs = [];
     file_text_close(customPackInfo);
     return packInfo;
@@ -24,26 +24,39 @@ function readShatterInfo(dir){
     songInfo.chart_path = dir;
     songInfo.is_custom = true;
     songInfo.song_id = array_length(global.shatter_list);
-    songInfo.audio_id = audio_create_stream(dir + "music.ogg");  
-    songInfo.preview_id = (file_exists(dir + "preview.ogg")) ? audio_create_stream(dir + "preview.ogg") : songInfo.audio_id;
-    
-    var jacketNames = ["jacket.gif", "jacket.jpeg", "jacket.jpg", "jacket.png"];
-    var hasJacket = false;
-    for(var i = 0; i < array_length(jacketNames); i++){
-        if (file_exists(dir + jacketNames[i]))
-        {
-            songInfo.jacket = sprite_add(dir + jacketNames[i], 1, false, false, 0, 0);
-            hasJacket = true;
-            break;
+
+    songInfo.audio_id=variable_struct_exists(songInfo,"audio_id")?audio_create_stream(dir + songInfo.audio_id):audio_create_stream(dir + "music.ogg")
+
+    if (!variable_struct_exists(songInfo,"preview_id")){
+        songInfo.preview_id = (file_exists(dir + "preview.ogg"))?audio_create_stream(dir + "preview.ogg"):songInfo.audio_id;
+    }
+    else{
+        songInfo.preview_id = audio_create_stream(dir + songInfo.preview_id);
+    }
+
+    var hasJacket=false;
+    if (variable_struct_exists(songInfo,"jacket")&&file_exists(dir + songInfo.jacket)){
+        songInfo.jacket = sprite_add(dir + songInfo.jacket, 1, false, false, 0, 0);
+        hasJacket=true;
+    }
+    else{
+        var jacketNames = ["jacket.gif", "jacket.jpeg", "jacket.jpg", "jacket.png"];
+        for(var i = 0; i < array_length(jacketNames); i++){
+            if (file_exists(dir + jacketNames[i]))
+            {
+                songInfo.jacket = sprite_add(dir + jacketNames[i], 1, false, false, 0, 0);
+                hasJacket = true;
+                break;
+            }
         }
     }
     if (!hasJacket)
         songInfo.jacket = song_generic;
     
-    if (!struct_exists(songInfo, "ticket_earns"))
+    if (!variable_struct_exists(songInfo, "ticket_earns"))
         songInfo.ticket_earns = [0, 0, 0];
     
-    if (!struct_exists(songInfo, "unlock"))
+    if (!variable_struct_exists(songInfo, "unlock"))
     {
         songInfo.unlock = function()
         {
@@ -110,35 +123,44 @@ function readCustomSongInfo(dir){
     songInfo.chart_path = dir;
     songInfo.is_custom = true;
     songInfo.song_id = array_length(global.song_list);
-    songInfo.unlock.song_id = array_length(global.song_list);
-    songInfo.audio_id = audio_create_stream(dir + "music.ogg");
-    songInfo.preview_id = (file_exists(dir + "preview.ogg")) ? audio_create_stream(dir + "preview.ogg") : songInfo.audio_id;
-    if (!struct_exists(songInfo,"sort_artists"))
-        songInfo.sort_artists=[songInfo.artist];
 
-    var jacketNames = ["jacket.gif", "jacket.jpeg", "jacket.jpg", "jacket.png"];
-    var hasJacket = false;
-    for(var i = 0; i < array_length(jacketNames); i++){
-        if (file_exists(dir + jacketNames[i]))
-        {
-            songInfo.jacket = sprite_add(dir + jacketNames[i], 1, false, false, 0, 0);
-            hasJacket = true;
-            break;
+    songInfo.unlock.song_id = array_length(global.song_list);
+    songInfo.audio_id=variable_struct_exists(songInfo,"audio_id")?audio_create_stream(dir + songInfo.audio_id):audio_create_stream(dir + "music.ogg")
+
+    if (!variable_struct_exists(songInfo,"preview_id")){
+        songInfo.preview_id = (file_exists(dir + "preview.ogg"))?audio_create_stream(dir + "preview.ogg"):songInfo.audio_id;
+    }
+    else{
+        songInfo.preview_id = audio_create_stream(dir + songInfo.preview_id);
+    }
+
+    var hasJacket=false;
+    if (variable_struct_exists(songInfo,"jacket")&&file_exists(dir + songInfo.jacket)){
+        songInfo.jacket = sprite_add(dir + songInfo.jacket, 1, false, false, 0, 0);
+        hasJacket=true;
+    }
+    else{
+        var jacketNames = ["jacket.gif", "jacket.jpeg", "jacket.jpg", "jacket.png"];
+        for(var i = 0; i < array_length(jacketNames); i++){
+            if (file_exists(dir + jacketNames[i]))
+            {
+                songInfo.jacket = sprite_add(dir + jacketNames[i], 1, false, false, 0, 0);
+                hasJacket = true;
+                break;
+            }
         }
     }
     if (!hasJacket)
         songInfo.jacket = song_generic;
-
-
     //enc_data(BACKSTAGE)部分
-    if (struct_exists(songInfo, "enc_data"))
+    if (variable_struct_exists(songInfo, "enc_data"))
     {
         var encData=songInfo.enc_data;
 
         encData.song_id = array_length(global.song_list);
-        encData.audio_id = (struct_exists(encData, "audio_id")) ? audio_create_stream(dir + encData.audio_id) : songInfo.audio_id;
-        encData.preview_id = (struct_exists(encData, "preview_id")) ? audio_create_stream(dir + encData.preview_id) : encData.audio_id;
-        encData.jacket = (struct_exists(songInfo.enc_data, "jacket")) ? sprite_add(dir + encData.jacket, 1, false, false, 0, 0) : songInfo.jacket;
+        encData.audio_id = (variable_struct_exists(encData, "audio_id")) ? audio_create_stream(dir + encData.audio_id) : songInfo.audio_id;
+        encData.preview_id = (variable_struct_exists(encData, "preview_id")) ? audio_create_stream(dir + encData.preview_id) : encData.audio_id;
+        encData.jacket = (variable_struct_exists(songInfo.enc_data, "jacket")) ? sprite_add(dir + encData.jacket, 1, false, false, 0, 0) : songInfo.jacket;
 
         songInfo.enc_data = encData;
     }

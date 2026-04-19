@@ -50,6 +50,12 @@
 
 ```json5
 {
+    /*这一段可要可不要*/
+    "audio_id":"aaa.ogg",//音频文件名，不填mod会去寻找music.ogg
+    "jacket":"aaa.png",//曲绘文件名，不填mod会去寻找jacket.png
+    "preview_id":"thisIsApreview.ogg"//预览音频文件名，不填mod会去寻找preview.ogg
+    //////////////////////////////////
+
     "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
     "name": "SuddeNDeath",//曲名
     "formatted_name": "Sudde\u88a0Death",//原始曲名
@@ -86,14 +92,15 @@
     谱师名和难度相关要填上面的diffculty4部分
     以下的项均可不填，不填的项与上面相同*/
     "enc_data":{
-        "audio_id":"miao.ogg",//曲目文件
-        "preview_id":"miao_preview.ogg",//预览音频文件
-        "jacket":"miao.png",//曲绘文件
+        "audio_id":"miao.ogg",//曲目文件名
+        "preview_id":"miao_preview.ogg",//预览音频文件名
+        "jacket":"miao.png",//曲绘文件名
         "bpm_display":"222",//bpm显示
         "name":"SuddeNDeath meow",
         "formatted_name":"Sudde\u88a0Death meow",
         "artist":"idk",
         "jacket_designer":"cusi"
+    /////////////////////////////////////////////
     }
 }
 ```
@@ -101,7 +108,13 @@
 一个完整的shatterinfo.json文件如下：
 
 ```json5
-{"chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
+{
+    /*这一段可要可不要*/
+    "audio_id":"aaa.ogg",//音频文件名，不填mod会去寻找music.ogg
+    "jacket":"aaa.png",//曲绘文件名，不填mod会去寻找jacket.png
+    "preview_id":"thisIsApreview.ogg"//预览音频文件名，不填mod会去寻找preview.ogg
+    //////////////////////////////////
+    "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
     "name": "SuddeNDeath",
     "formatted_name": "Sudde\u88a0Death",
     "artist": "xi vs. Morimori Atsushi",

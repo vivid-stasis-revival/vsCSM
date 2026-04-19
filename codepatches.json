@@ -23,12 +23,6 @@
         "Type": 1
     },
     {
-        "Entry": "gml_GlobalScript_add_value_to_ratingscore_table",
-        "Find": "global.song_list[i].chart_id != \"plaudite\"",
-        "Value": "(global.song_list[i].chart_id != \"plaudite\" && !struct_exists(global.song_list[i],\"is_custom\"))",
-        "Type": 0
-    },
-    {
         "Entry": "gml_GlobalScript_upload_score",
         "Find": "var song = global.song_list[arg0];",
         "Value": "var song = global.song_list[arg0];if(struct_exists(song,\"is_custom\")) return;",
@@ -224,5 +218,10 @@
         "Function": "",
         "ExternalFile":"ReloadCustoms\\reload_customs_btn.gml",
         "Type": 3
+    },{
+        "Entry": "gml_GlobalScript_rating_functions",
+        "Find": "global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\"",
+        "Value":"global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\" && !variable_struct_exists(global.song_list[i],\"is_custom\")",
+        "Type": 1
     }
 ]

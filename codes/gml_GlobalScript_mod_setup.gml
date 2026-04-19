@@ -144,6 +144,8 @@ addGlobalMod("fx_glow", 1);
 addGlobalMod("fx_particleglow", 0.5);
 addGlobalMod("pburstspeed", 0.5);
 addGlobalMod("freeze", 2);
+addGlobalMod("drawuntil", 0);
+
 
 function isChartSpecificMod(arg0)
 {
