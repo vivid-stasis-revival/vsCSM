@@ -204,13 +204,13 @@
     {
         "Entry": "gml_GlobalScript_SendQueuePacket",
         "Find": "return buffer;",
-        "Value":"for (var i = 0; i < items; i++)buffer_write(buffer, buffer_string, global.song_list[queue[i].songId].chart_id);return buffer;",
+        "ExternalFile": "CustomWP\\SendQueuePacket_part1.gml",
         "Type": 1
     },
     {
         "Entry": "gml_GlobalScript_SendQueuePacket",
         "Find": "buffer_delete(arg0);",
-        "Value":"for (var i = 0; i < items; i++){try{obj[i].songId = get_song_id_from_chart(buffer_read(arg0, buffer_string));}catch (ex){}}buffer_delete(arg0);",
+        "ExternalFile": "CustomWP\\SendQueuePacket_part2.gml",
         "Type": 1
     },
     {
