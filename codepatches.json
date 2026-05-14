@@ -223,5 +223,10 @@
         "Find": "global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\"",
         "Value":"global.song_list[i].chart_id != \"plaudite\" && global.song_list[i].chart_id != \"n7\" && !variable_struct_exists(global.song_list[i],\"is_custom\")",
         "Type": 0
+    },{
+        "Entry": "gml_Object_o_transitionsong_Alarm_0",
+        "Find": "diff_col = backstage ? 7209215 : 16711858;",
+        "Value":"jacket_designer = backstage ? song.enc_data.jacket_designer : jacket_designer; diff_col =  backstage ? 7209215 : 16711858;",
+        "Type": 1
     }
 ]

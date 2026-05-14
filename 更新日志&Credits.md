@@ -43,3 +43,11 @@ mod原作者：2569083408
 ### 3.2.0
 - 让mod与新版vs兼容
 - 现在info和shatterinfo内可以自己指定音频文件,预览音频文件及曲绘文件
+
+### 3.2.1
+- 修复rating问题
+
+### 3.2.2
+- 修复backstage难度的jacket无法正确显示的bug
+- 修复了wp一些bug
+- 修复按Artist排名可能崩溃的bug

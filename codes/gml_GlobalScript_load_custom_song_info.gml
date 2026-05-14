@@ -127,6 +127,10 @@ function readCustomSongInfo(dir){
     songInfo.unlock.song_id = array_length(global.song_list);
     songInfo.audio_id=variable_struct_exists(songInfo,"audio_id")?audio_create_stream(dir + songInfo.audio_id):audio_create_stream(dir + "music.ogg")
 
+    if (!variable_struct_exists(songInfo,"sort_artists")){
+        songInfo.sort_artists = [songInfo.artist];
+    }
+
     if (!variable_struct_exists(songInfo,"preview_id")){
         songInfo.preview_id = (file_exists(dir + "preview.ogg"))?audio_create_stream(dir + "preview.ogg"):songInfo.audio_id;
     }
@@ -161,7 +165,7 @@ function readCustomSongInfo(dir){
         encData.audio_id = (variable_struct_exists(encData, "audio_id")) ? audio_create_stream(dir + encData.audio_id) : songInfo.audio_id;
         encData.preview_id = (variable_struct_exists(encData, "preview_id")) ? audio_create_stream(dir + encData.preview_id) : encData.audio_id;
         encData.jacket = (variable_struct_exists(songInfo.enc_data, "jacket")) ? sprite_add(dir + encData.jacket, 1, false, false, 0, 0) : songInfo.jacket;
-
+        encData.jacket_designer = variable_struct_exists(encData, "jacket_designer") ? encData.jacket_designer : songInfo.jacket_artist;
         songInfo.enc_data = encData;
     }
     return songInfo; 

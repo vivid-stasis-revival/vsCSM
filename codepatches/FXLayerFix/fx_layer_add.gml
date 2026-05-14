@@ -1,3 +1,4 @@
+
 chromaLayer=layer_get_id("Fx_chroma")
 redLayer = layer_create(-2300, "FX_red");
 twirlLayer = layer_create(-2200, "FX_twirl");
@@ -43,4 +44,3 @@ layer_set_visible(edgeLayer, 0);
 layer_set_visible(hueLayer, 1);
 layer_set_visible(underwaterLayer, 1);
 layer_set_visible(zoomLayer, 0);
-
