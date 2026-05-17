@@ -75,7 +75,7 @@ function load_text_mods(arg0)
             for (var i = beatStart; i <= beatEnd; i += beatInc)
             {
                 modsDefinition.count_loop++;
-                var m = 
+                var ms = 
                 {
                     b: i,
                     d: real(dur),
@@ -84,9 +84,10 @@ function load_text_mods(arg0)
                     m: modName,
                     p: real(proxy)
                 };
-                m.w = variable_struct_get(global.mod_weight, m.m);
-                m.e = variable_struct_get(global.eases, ease);
-                array_push(modsDefinition.mods, m);
+                ms.w = struct_get(global.mod_weight, ms.m);
+                ms.e = struct_get(global.eases, ease);
+                ms.ig = struct_exists(global.mods, ms.m)
+                array_push(modsDefinition.mods, ms);
             }
         }
         else if (mode == "mpf" && instance_exists(cc))

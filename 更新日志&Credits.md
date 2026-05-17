@@ -48,6 +48,12 @@ mod原作者：2569083408
 - 修复rating问题
 
 ### 3.2.2
-- 修复backstage难度的jacket无法正确显示的bug
+- 修复backstage难度的jacket_designer无法正确显示的bug
 - 修复了wp一些bug
 - 修复按Artist排名可能崩溃的bug
+
+### 3.2.3
+- 修复了读取官谱bs崩溃的bug
+
+### 3.3
+- 适配了新的vs版本
