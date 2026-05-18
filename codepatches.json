@@ -226,7 +226,7 @@
     },{
         "Entry": "gml_Object_o_transitionsong_Alarm_0",
         "Find": "diff_col = backstage ? 7209215 : 16711858;",
-        "Value":"if (struct_exists(song,\"is_custom\")){jacket_designer = backstage ? song.enc_data.jacket_designer : jacket_designer; diff_col =  backstage ? 7209215 : 16711858;}",
+        "Value":"if (struct_exists(song,\"is_custom\")){jacket_designer = backstage ? song.enc_data.jacket_designer : jacket_designer;} diff_col =  backstage ? 7209215 : 16711858;",
         "Type": 1
     },{
         "Entry":"gml_GlobalScript_mod_setup",
@@ -243,5 +243,15 @@
         "Type":3,
         "Function":"",
         "ExternalFile":"updateMod.gml"
+    },{
+        "Entry":"gml_GlobalScript_start_song_shatter",
+        "Find":"var song = global.shatter_list[arg0];",
+        "Value":"var song = global.shatter_list[arg0];global.currentSongInfo=song;",
+        "Type":0
+    },{
+        "Entry":"gml_GlobalScript_start_song",
+        "Find":"var song = global.song_list[arg0];",
+        "Value":"var song = global.song_list[arg0];global.currentSongInfo=song;",
+        "Type":0
     }
 ]

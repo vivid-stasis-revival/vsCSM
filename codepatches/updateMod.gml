@@ -1,4 +1,4 @@
-if (!struct_exists(cc.songInfo,"is_custom"))
+if (!struct_exists(global.currentSongInfo,"is_custom"))
     exit;
 addExtraMod = function(modName, weight = 1, callBack = undefined, endCallBack = undefined)
 {
