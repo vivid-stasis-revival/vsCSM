@@ -21,14 +21,16 @@ function load_text_chart(path, diff)
     
     for (i = 0; i < array_length(lines); i++)
     {
+
         var parts = split_string(",", lines[i], false);
+        if (array_length(parts) < 3)
+            continue;
         var time = real(parts[0]);
         var type = real(parts[1]);
         var lane = real(parts[2]);
         var extra = {};
         var extra = {};
         var endTime = time;
-        
         if (array_length(parts) > 3)
         {
             if (type == 2)

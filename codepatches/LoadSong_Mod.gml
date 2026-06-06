@@ -1,5 +1,6 @@
 var filePath = working_directory + "Charts/" + arg0 + "/" + arg1 + ".vsb";
 var chart = undefined;
+var chartPath = "";
 
 if (file_exists(filePath))
 {   
@@ -7,7 +8,7 @@ if (file_exists(filePath))
 }
 else
 {
-    var chartPath = get_chart_path_from_chart(arg0);
+    chartPath = get_chart_path_from_chart(arg0);
     var modFilePath = chartPath + arg1 + ".vsm";
     chart = load_text_chart(chartPath, arg1);
 }
