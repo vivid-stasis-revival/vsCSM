@@ -119,7 +119,10 @@ function readCustomSongInfo(dir){
         songInfoJson = songInfoJson + file_text_readln(customSongInfo);
     file_text_close(customSongInfo);
 
-    songInfo = json_parse(songInfoJson);
+    songInfoSrc = json_parse(songInfoJson);
+    songInfo=getGenericSong(-1);
+    struct_copy(songInfoSrc, songInfo);
+
     songInfo.chart_path = dir;
     songInfo.is_custom = true;
     songInfo.song_id = array_length(global.song_list);

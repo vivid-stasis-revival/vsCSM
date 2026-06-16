@@ -35,3 +35,11 @@ function WriteInLogWithTimeAndTag(tag,content){
     file_text_close(logFile);
 }
 
+function struct_copy(cpySrc,cpyDest){
+    var kys=struct_get_names(cpyDest);
+    for (var i=0; i<array_length(kys); i++){
+        var _name=kys[i];
+        struct_set(cpyDest,_name,struct_get(cpySrc,_name));
+    }
+}
+
