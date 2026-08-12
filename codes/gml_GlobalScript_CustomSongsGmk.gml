@@ -19,7 +19,7 @@ function load_text_mods(arg0)
     if (!file_exists(fileName))
         return undefined;
     
-    file = file_text_open_read(fileName);
+    var file = file_text_open_read(fileName);
     var mode = "mods";
     
     while (!file_text_eof(file))

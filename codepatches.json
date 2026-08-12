@@ -234,11 +234,6 @@
         "Type":0,
         "ExternalFile":"gmk_easing_extension.gml"
     },{
-        "Entry":"gml_Object_obj_base_gimmick_Create_0",
-        "Type":3,
-        "Function":"",
-        "ExternalFile":"updateMod.gml"
-    },{
         "Entry":"gml_GlobalScript_start_song_shatter",
         "Find":"var song = global.shatter_list[arg0];",
         "Value":"var song = global.shatter_list[arg0];global.currentSongInfo=song;",
