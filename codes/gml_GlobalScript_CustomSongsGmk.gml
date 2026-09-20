@@ -1,4 +1,4 @@
-function load_text_mods(arg0)
+function load_text_mods(path,diff)
 {
     var ds_mods = [];
     var ds_mpf = [];
@@ -14,10 +14,12 @@ function load_text_mods(arg0)
         count_no_loop: 0,
         count_loop: 0
     };
-    var fileName = arg0;
+    var fileName = path+diff+".vsm";
     
-    if (!file_exists(fileName))
-        return undefined;
+    if (!file_exists(fileName)){
+        fileName=path+"GLOBAL.vsm"
+        if (!file_exists(fileName)) return undefined;
+    }
     
     var file = file_text_open_read(fileName);
     var mode = "mods";

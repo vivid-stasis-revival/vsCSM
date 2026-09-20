@@ -2,7 +2,7 @@ function load_text_chart(path, diff)
 {
     var filePath = path + diff + ".vsc";
     var modfilePath = path + diff + ".vsm";
-    var modDefinition = load_text_mods(path + diff + ".vsm");
+    var modDefinition = load_text_mods(path, diff);
     var map = file_text_open_read(filePath);
     var i = 0;
     var lines = [];

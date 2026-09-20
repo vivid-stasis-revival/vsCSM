@@ -5,7 +5,7 @@ var hash_mod;
     {
         finalstatName = customStatName;
         hash = sha1_file(customChartName);
-        if file_exists(customModName){
+        if (customModName!=undefined){
             hash_mod=sha1_file(customModName);
             hash=hash+hash_mod
         }
