@@ -50,10 +50,11 @@
 
 ```json5
 {
-    /*这一段可要可不要*/
+    ///////这一段可要可不要//////////////
     "audio_id":"aaa.ogg",//音频文件名，不填mod会去寻找music.ogg
     "jacket":"aaa.png",//曲绘文件名，不填mod会去寻找jacket.png
-    "preview_id":"thisIsApreview.ogg"//预览音频文件名，不填mod会去寻找preview.ogg
+    "jacket_animated":true,//为true代表使用动态曲绘，帧数量为宽度/高度
+    "preview_id":"thisIsApreview.ogg",//预览音频文件名，不填mod会去寻找preview.ogg
     //////////////////////////////////
 
     "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名
@@ -95,6 +96,7 @@
         "audio_id":"miao.ogg",//曲目文件名
         "preview_id":"miao_preview.ogg",//预览音频文件名
         "jacket":"miao.png",//曲绘文件名
+        "jacket_animated":true,//为true代表使用动态曲绘，帧数量为宽度/高度，可不写
         "bpm_display":"222",//bpm显示
         "name":"SuddeNDeath meow",
         "formatted_name":"Sudde\u88a0Death meow",
@@ -109,9 +111,10 @@
 
 ```json5
 {
-    /*这一段可要可不要*/
+    ////////这一段可要可不要///////////////
     "audio_id":"aaa.ogg",//音频文件名，不填mod会去寻找music.ogg
     "jacket":"aaa.png",//曲绘文件名，不填mod会去寻找jacket.png
+    "jacket_animated":true,//为true代表使用动态曲绘，帧数量为宽度/高度，可不写
     "preview_id":"thisIsApreview.ogg"//预览音频文件名，不填mod会去寻找preview.ogg
     //////////////////////////////////
     "chart_id": "cusi", //谱面识别名，需要和谱面文件夹同名

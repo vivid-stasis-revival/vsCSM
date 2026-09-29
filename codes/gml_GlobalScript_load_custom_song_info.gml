@@ -119,7 +119,6 @@ function CustomShatterReader() {
                 array_push(global.shatter_order, songInfo.song_id);
             }
             packCustomPath = file_find_next();
-
         }
     }
     file_find_close();

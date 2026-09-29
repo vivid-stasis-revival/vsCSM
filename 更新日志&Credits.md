@@ -66,9 +66,10 @@ mod原作者：2569083408
 - 修复了songinfo不填第四难度信息导致ss/aracde崩溃
 
 ### 3.3.4
-
 - 部分跟进了游戏更新
 
 ### 3.4.0
-- 支持了动态曲绘
+- 支持了动态曲绘，在info内使用jacket_animated来指定
 - 支持了GLOBAL.vsm
+- 给vsc语句支持了第五个参数modExtra，以供mod使用；使用"|"符号分隔每个属性，每个属性要用key:value的形式写入
+- 同步更新了vsm文档
