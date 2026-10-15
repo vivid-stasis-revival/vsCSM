@@ -11,8 +11,6 @@ function load_text_mods(path,diff)
         },
         mods: ds_mods,
         perFrame: ds_mpf,
-        count_no_loop: 0,
-        count_loop: 0
     };
     var fileName = path+diff+".vsm";
     
@@ -23,7 +21,7 @@ function load_text_mods(path,diff)
     
     var file = file_text_open_read(fileName);
     var mode = "mods";
-    
+    var obj_ins = getModGimmickObj(modsDefinition.data.obj);
     while (!file_text_eof(file))
     {
         var line = file_text_readln(file);
@@ -44,9 +42,12 @@ function load_text_mods(path,diff)
             var key = string_trim(parts[0]);
             var value = string_trim(parts[1]);
             variable_struct_set(modsDefinition.data, key, value);
+            if (key=="obj"){
+                if (obj_ins.isNew) instance_destroy(obj_ins.obj);
+                obj_ins = getModGimmickObj(modsDefinition.data.obj);
+            }
             continue;
         }
-        
         if (mode == "mods")
         {
             var parts = string_split(line, ",");
@@ -56,7 +57,6 @@ function load_text_mods(path,diff)
             var to = parts[4];
             var modName = parts[5];
             var proxy = parts[6];
-            modsDefinition.count_no_loop++;
             var beatParts = string_split(parts[0], ":");
             var beatStart = real(beatParts[0]);
             var beatEnd = beatStart;
@@ -76,7 +76,6 @@ function load_text_mods(path,diff)
             
             for (var i = beatStart; i <= beatEnd; i += beatInc)
             {
-                modsDefinition.count_loop++;
                 var ms = 
                 {
                     b: i,
@@ -92,9 +91,8 @@ function load_text_mods(path,diff)
                 array_push(modsDefinition.mods, ms);
             }
         }
-        else if (mode == "mpf" && instance_exists(cc))
+        else if (mode == "mpf")
         {
-            var obj_ins = getModGimmickObj(modsDefinition.data.obj);
             var parts = string_split(line, ",");
             var m = 
             {
@@ -105,7 +103,8 @@ function load_text_mods(path,diff)
             array_push(modsDefinition.perFrame, m);
         }
     }
-    
     file_text_close(file);
+
+    if (obj_ins.isNew) instance_destroy(obj_ins.obj);
     return modsDefinition;
 }

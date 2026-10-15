@@ -143,7 +143,7 @@ function readCustomSongInfo(dir) {
         continue;
     }
     songInfo = getGenericSong(-1);
-    WriteInLogWithTimeAndTag("info copied");
+    // WriteInLogWithTimeAndTag("info copied");
     structcpy(songInfoSrc, songInfo);
 
     songInfo.chart_path = dir;

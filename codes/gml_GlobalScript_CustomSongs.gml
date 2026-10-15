@@ -54,6 +54,6 @@ function load_text_chart(path, diff) {
         array_push(_notes, noteData);
     }
     array_sort(_notes, function(a, b){return a.time - b.time; });
-    WriteInLogWithTag("notes", _notes);
+    // WriteInLogWithTag("notes", _notes);
     return {notes: _notes, mods: modDefinition};
 }
